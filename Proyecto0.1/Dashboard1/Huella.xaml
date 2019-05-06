@@ -1,0 +1,17 @@
+﻿<Window x:Class="Dashboard1.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dashboard1"
+        mc:Ignorable="d"
+        Title="ADMIN ACCESS" Height="450" Width="800">
+    <Grid Background="#FF00A2FF" Margin="0,0,0,-101">
+        <StackPanel HorizontalAlignment="Left" Height="450" Margin="208,42,0,0" VerticalAlignment="Top" Width="382" Background="White">
+            <Image x:Name="image" Source="Resources/fixed.png" Height="99" VerticalAlignment="Top" Margin="110,80,110,0"/>
+            <TextBox x:Name="user" Height="33" TextWrapping="Wrap" Text="O Ingrese documento de identidad" Width="250" Margin="0,20,0,0"/>
+            <Button x:Name="button" Content="Registrar" d:LayoutOverrides="Height" Width="200" Margin="0,30,0,0 "/>
+        </StackPanel>
+
+    </Grid>
+</Window>

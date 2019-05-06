@@ -6,10 +6,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace WpfApp1
+namespace Dashboard1
 {
     /// <summary>
-    /// Lógica de interacción para App.xaml
+    /// Interação lógica para App.xaml
     /// </summary>
     public partial class App : Application
     {
