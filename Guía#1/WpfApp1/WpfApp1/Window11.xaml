@@ -1,0 +1,16 @@
+﻿<Window x:Class="WpfApp1.Window11"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="Window11" Height="450" Width="800">
+    <Grid>
+        <TextBlock Margin="10" TextWrapping="Wrap">  TextBlock con <Bold>negrilla</Bold>, <Italic>italica</Italic> y texto <Underline>subrayado</Underline>.</TextBlock>
+        
+    </Grid>
+    <Grid>
+<TextBlock Margin="10" TextWrapping="Wrap">    Para mayor información <Hyperlink RequestNavigate="Hyperlink_RequestNavigate" NavigateUri="https://www.google.com">click</Hyperlink> aquí. </TextBlock> 
+    </Grid>
+</Window>
