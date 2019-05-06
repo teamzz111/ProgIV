@@ -1,0 +1,21 @@
+﻿<Window x:Class="Cuadros_de_diálogo_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cuadros_de_diálogo_WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <Canvas>
+        <Button x:Name="button" Content="MessageBox Simple" Canvas.Left="39" Canvas.Top="60"
+        Width="150" Height="50" Click="Button_Click"/>
+        <Button x:Name="button1" Content="MessageBox con título" Canvas.Left="549" Canvas.Top="60"
+        Width="150" Height="50" Click="Button_Click1"/>
+        <Button x:Name="button2" Content="MessageBox con botones" Canvas.Left="210" Canvas.Top="60"
+        Width="150" Height="50" Click="Button_Click2"/>
+        <Button x:Name="button3" Content="MessageBox con ícono" Canvas.Left="381" Canvas.Top="60"
+        Width="150" Height="50" Click="Button_Click3"/>
+    </Canvas>
+    
+</Window>

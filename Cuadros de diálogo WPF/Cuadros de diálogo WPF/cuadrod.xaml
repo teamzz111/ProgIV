@@ -1,0 +1,31 @@
+﻿<Window x:Class="Cuadros_de_diálogo_WPF.cuadrod"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cuadros_de_diálogo_WPF"
+        mc:Ignorable="d"
+        Icon="C:\Users\monoa\Documents\Visual Studio 2017\Proyectos\Cuadros de diálogo WPF\Cuadros de diálogo WPF\Properties\recources\ghost.ico"
+        Title="cuadrod" Height="169.186" Width="536.628">
+    <Grid Margin="15">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Image Source="C:\Users\monoa\Documents\Visual Studio 2017\Proyectos\Cuadros de diálogo WPF\Cuadros de diálogo WPF\Properties\recources\q.png" Width="32" Height="32" Grid.RowSpan="2" Margin="20,0" />
+        <Label Name="lblPregunta" Grid.Column="1">Pregunta:</Label>
+        <TextBox Name="txtRespuesta" Grid.Column="1" Grid.Row="1"
+MinWidth="250">Respuesta</TextBox>
+        <WrapPanel Grid.Row="2" Grid.ColumnSpan="2" HorizontalAlignment="Right"
+Margin="0,15,0,0">
+            <Button IsDefault="True" Name="btnDialogOk" Click="btnDialogOk_Click" MinWidth="60"
+Margin="0,0,10,0">_Ok</Button>
+            <Button IsCancel="True" MinWidth="60" Content="_Cancel"/>
+        </WrapPanel>
+    </Grid>
+</Window>
