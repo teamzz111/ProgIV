@@ -9,6 +9,7 @@
     <Grid Background="#FF00A2FF" Margin="0,0,0,-101">
         <StackPanel HorizontalAlignment="Left" Height="393" Margin="208,42,0,0" VerticalAlignment="Top" Width="382" Background="White">
             <Image x:Name="image" Source="Resources/user.png" Height="133" VerticalAlignment="Top" Width="163" Margin="109,20,109,0"/>
+
             <TextBox x:Name="user" Height="33" TextWrapping="Wrap"  Width="250" Margin="0,20,0,0"/>
             <PasswordBox x:Name="pass" Height="33"  Width="250" Margin="66,20,66,0"/>
             <Button x:Name="button" Content="Iniciar sesión" d:LayoutOverrides="Height" Width="200" Margin="0,30,0,0 " Click="button_Click"/>
