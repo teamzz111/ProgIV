@@ -10,7 +10,5 @@
         <TextBlock Margin="10" TextWrapping="Wrap">  TextBlock con <Bold>negrilla</Bold>, <Italic>italica</Italic> y texto <Underline>subrayado</Underline>.</TextBlock>
         
     </Grid>
-    <Grid>
-<TextBlock Margin="10" TextWrapping="Wrap">    Para mayor información <Hyperlink RequestNavigate="Hyperlink_RequestNavigate" NavigateUri="https://www.google.com">click</Hyperlink> aquí. </TextBlock> 
-    </Grid>
+
 </Window>

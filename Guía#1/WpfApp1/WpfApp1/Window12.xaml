@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="Window12" Heigh01t="450" Width="800">
+        Title="Window12" Height="450" Width="800">
     <Grid>
         <Grid>
             <TextBlock Margin="10" TextWrapping="Wrap">    Para mayor información <Hyperlink RequestNavigate="Hyperlink_RequestNavigate" NavigateUri="https://www.google.com">click</Hyperlink> aquí.</TextBlock>
