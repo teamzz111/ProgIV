@@ -17,9 +17,9 @@ namespace Dashboard1
     /// <summary>
     /// Lógica de interacción para Window1.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class Huella : Window
     {
-        public Window1()
+        public Huella()
         {
             InitializeComponent();
         }

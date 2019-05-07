@@ -118,7 +118,7 @@
                         <TranslateTransform X="0.498"/>
                     </TransformGroup>
                 </StackPanel.RenderTransform>
-                <Button Margin="0,30,0,0" Background="{x:Null}" BorderBrush="{x:Null}">
+                <Button Margin="0,30,0,0" Background="{x:Null}" BorderBrush="{x:Null}" Click="Button_Click">
                     <Grid HorizontalAlignment="Left"  Width="150">
                         <materialDesign:PackIcon Kind="ViewDashboard" VerticalAlignment="Center" Foreground="White"/>
                         <TextBlock HorizontalAlignment="Center" Text="INICIO" FontFamily="Champagne &amp; Limousines" Foreground="White"/>
