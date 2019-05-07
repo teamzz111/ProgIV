@@ -13,7 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data;
-using System.Data.SqlClient;
+using System.Data.SqlClient;
+
 
 namespace FormularioDeAutenticación
 {
@@ -26,17 +27,16 @@ namespace FormularioDeAutenticación
         {
             InitializeComponent();
         }
-        SqlConnection sqlCon = new SqlConnection(@"Data Source=localhost\SQLEXPRESS;
-Initial Catalog=ElectivaIV; Integrated Security=True;");
+        SqlConnection sqlCon = new SqlConnection(@"Data Source=localhost\SQLEXPRESS; Initial Catalog=ElectivaIV; Integrated Security=True;");
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             try
             {
                 if (sqlCon.State == ConnectionState.Closed)
                     sqlCon.Open();
-                String consulta = "SELECT COUNT(1) FROM tbusuarios WHERE Login=@Username AND
-Password = @Password";
- SqlCommand sqlCmd = new SqlCommand(consulta, sqlCon);
+                String consulta = "SELECT COUNT(1) FROM tbusuarios WHERE Login=@Username AND Password = @Password";
+                SqlCommand sqlCmd = new SqlCommand(consulta, sqlCon);
                 sqlCmd.CommandType = CommandType.Text;
                 sqlCmd.Parameters.AddWithValue("@Username", txtUsername.Text);
                 sqlCmd.Parameters.AddWithValue("@Password", txtPassword.Password);

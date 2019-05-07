@@ -7,14 +7,14 @@
         mc:Ignorable="d"
         Title="Login User" Height="319" Width="347.767" BorderThickness="0,0,0,1">
     <Grid Margin="10,0,0,0">
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="267" Margin="10,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="296"/>
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="173" Margin="42,77,0,0" Stroke="Black" VerticalAlignment="Top" Width="221"/>
-        <Label x:Name="label" Content="User" HorizontalAlignment="Left" Margin="64,89,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.147,-0.269"/>
-        <Label x:Name="label1" Content="Password" HorizontalAlignment="Left" Margin="64,138,0,0" VerticalAlignment="Top"/>
+        <Rectangle Fill="White" HorizontalAlignment="Left" Height="287" Stroke="Black" VerticalAlignment="Top" Width="343" Margin="-13,0,0,0"/>
+        <Rectangle Fill="White" HorizontalAlignment="Left" Height="173" Margin="42,77,0,0" VerticalAlignment="Top" Width="221"/>
+        <Label x:Name="label" Content="Usuario" HorizontalAlignment="Left" Margin="64,89,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.147,-0.269"/>
+        <Label x:Name="label1" Content="Contraseña&#xD;&#xA;" HorizontalAlignment="Left" Margin="64,138,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="23" Margin="64,115,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="171"/>
         <Label x:Name="label2" Content="Inicio de sesión" HorizontalAlignment="Left" Margin="89,23,0,0" VerticalAlignment="Top" FontSize="20"/>
         <Button x:Name="button" Content="Iniciar sesión
-                " HorizontalAlignment="Left" Margin="115,205,0,0" VerticalAlignment="Top" Width="75" Height="26" Click="Button_Click"/>
+                " HorizontalAlignment="Left" Margin="115,205,0,0" VerticalAlignment="Top" Width="75" Height="26" Click="Button_Click" BorderBrush="{x:Null}" Background="#FF0097FF" Foreground="White"/>
         <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="64,169,0,0" VerticalAlignment="Top" Width="171" Height="23"/>
 
     </Grid>
