@@ -124,7 +124,7 @@
                         <TextBlock HorizontalAlignment="Center" Text="INICIO" FontFamily="Champagne &amp; Limousines" Foreground="White"/>
                     </Grid>
                 </Button>
-                <Button Margin="0,10,0,0" Background="{x:Null}" BorderBrush="{x:Null}">
+                <Button Margin="0,10,0,0" Background="{x:Null}" BorderBrush="{x:Null}" Click="Button_Click_1">
                     <Grid Width="150">
                         <materialDesign:PackIcon Kind="Account" VerticalAlignment="Center" Foreground="White"/>
                         <TextBlock HorizontalAlignment="Center" Text="USUARIOS" FontFamily="Champagne &amp; Limousines" Margin="42,0,-48,-1" Width="156" Foreground="White"/>
