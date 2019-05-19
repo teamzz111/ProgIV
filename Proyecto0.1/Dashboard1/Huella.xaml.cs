@@ -48,6 +48,7 @@ namespace Dashboard1
         {
             InitializeComponent();
             graphics = this.pbImage.CreateGraphics();
+            font = new Font("Times New Roman", 12, GraphicsUnit.Pixel);
             DPFP.Capture.ReadersCollection coll = new DPFP.Capture.ReadersCollection();
             regFeatures = new DPFP.FeatureSet[4];
             for (int i = 0; i < 4; i++)

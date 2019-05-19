@@ -9,6 +9,6 @@ namespace Dashboard1
 {
     class Funciones
     {
-        public SqlConnection conexion = new SqlConnection("integrated security = true; server=(local)\\SQLEXPRESS;database=dbo");
+        public SqlConnection conexion = new SqlConnection("integrated security = true; server=DESKTOP-F385B8I;database=dbo");
     }
 }
