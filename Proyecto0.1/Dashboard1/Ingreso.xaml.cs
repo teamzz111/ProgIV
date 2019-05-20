@@ -10,8 +10,9 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Data.SqlClient;
 using System.Windows.Shapes;
-
+using System.Data;
 namespace Dashboard1
 {
     /// <summary>
@@ -22,6 +23,38 @@ namespace Dashboard1
         public Ingreso()
         {
             InitializeComponent();
+        }
+        Funciones f = new Funciones();
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+
+            try
+            {
+                SqlCommand comandodb;
+                if (f.conexion.State == ConnectionState.Closed)
+                    f.conexion.Open();
+                comandodb = new SqlCommand("ConsultarEmpleado", f.conexion);
+                comandodb.CommandType = CommandType.StoredProcedure;
+                comandodb.Parameters.AddWithValue("@Id", textBox.Text);
+                SqlDataReader reader = comandodb.ExecuteReader();
+                while (reader.Read())
+                {
+                   label.Content="Bienvenido "+ reader.GetString(1);
+                }
+
+                if (f.conexion.State == ConnectionState.Open)
+                {
+                    f.conexion.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Faltan datos", "Información");
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message, "Información");
+            }
         }
     }
 }

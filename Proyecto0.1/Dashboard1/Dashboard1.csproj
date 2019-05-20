@@ -94,6 +94,9 @@
     </Compile>
     <Compile Include="Funciones.cs" />
     <Compile Include="Helper.cs" />
+    <Compile Include="Ingreso.xaml.cs">
+      <DependentUpon>Ingreso.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Usuarios.xaml.cs">
       <DependentUpon>Usuarios.xaml</DependentUpon>
     </Compile>
@@ -105,6 +108,10 @@
     </Compile>
     <Compile Include="WebCam.cs" />
     <Page Include="Foto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ingreso.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
