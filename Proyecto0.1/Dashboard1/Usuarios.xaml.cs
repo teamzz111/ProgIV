@@ -151,5 +151,87 @@ namespace Dashboard1
                 MessageBox.Show(exc.Message, "Información");
             }
         }
+
+        private void Button3_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                SqlCommand comandodb;
+                if (f.conexion.State == ConnectionState.Closed)
+                    f.conexion.Open();
+                comandodb = new SqlCommand("ModificarEmpleado", f.conexion);
+                comandodb.CommandType = CommandType.StoredProcedure;
+                comandodb.Parameters.AddWithValue("@Id", textBox6.Text);
+                comandodb.Parameters.AddWithValue("@nombre", textBox.Text);
+                comandodb.Parameters.AddWithValue("@apellido", textBox1.Text);
+                comandodb.Parameters.AddWithValue("@direccion", textBox3.Text);
+                comandodb.Parameters.AddWithValue("@telefono", textBox4.Text);
+                comandodb.Parameters.AddWithValue("@email", textBox5.Text);
+                comandodb.Parameters.Add("@msj", SqlDbType.VarChar, 60).Direction
+               =
+                ParameterDirection.Output;
+                comandodb.ExecuteNonQuery();
+                MessageBox.Show(comandodb.Parameters["@msj"].Value + "");
+                if (f.conexion.State == ConnectionState.Open)
+                {
+                    f.conexion.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Faltan datos", "Información");
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message, "Información");
+            }
+        }
+
+        private void Button4_Click(object sender, RoutedEventArgs e)
+        {
+            Huella h = new Huella();
+            h.Show();
+        }
+
+        private void Button2_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                SqlCommand comandodb;
+                if (f.conexion.State == ConnectionState.Closed)
+                    f.conexion.Open();
+                comandodb = new SqlCommand("ConsultarEmpleado", f.conexion);
+                comandodb.CommandType = CommandType.StoredProcedure;
+                comandodb.Parameters.AddWithValue("@Id", textBox6.Text);
+                SqlDataReader reader = comandodb.ExecuteReader();
+                while (reader.Read())
+                {
+                    textBox6.Text = "as";
+                    textBox.Text = reader.GetString(1);
+                    textBox1.Text = reader.GetString(2);
+                    textBox3.Text = reader.GetString(3);
+                    textBox4.Text = reader.GetInt32(4).ToString();
+                    textBox5.Text = reader.GetString(5);
+                    reader.Close();
+                    comandodb.ExecuteNonQuery();
+                    
+                }
+
+
+
+                if (f.conexion.State == ConnectionState.Open)
+                {
+                    f.conexion.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Faltan datos", "Información");
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message, "Información");
+            }
+        }
     }
 }

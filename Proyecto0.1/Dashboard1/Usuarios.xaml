@@ -5,41 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Dashboard1"
         mc:Ignorable="d"
-        Title="Usuarios" Height="450" Width="699">
-    <Grid Margin="0,0,2,0">
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="32,68,0,0" TextWrapping="Wrap" Text="Nombre" VerticalAlignment="Top" Width="164" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="32,109,0,0" TextWrapping="Wrap" Text="Apellido" VerticalAlignment="Top" Width="164" GotFocus="TextBox1_GotFocus" LostFocus="TextBox1_LostFocus"/>
-        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" Margin="32,147,0,0" TextWrapping="Wrap" Text="Dirección" VerticalAlignment="Top" Width="164" GotFocus="TextBox3_GotFocus" LostFocus="TextBox3_LostFocus" TextChanged="TextBox3_TextChanged"/>
-        <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="23" Margin="32,188,0,0" TextWrapping="Wrap" Text="Teléfono" VerticalAlignment="Top" Width="164" GotFocus="TextBox4_GotFocus" LostFocus="TextBox4_LostFocus"/>
-        <TextBox x:Name="textBox5" HorizontalAlignment="Left" Height="23" Margin="32,226,0,0" TextWrapping="Wrap" Text="E-mail" VerticalAlignment="Top" Width="164" GotFocus="TextBox5_GotFocus" LostFocus="TextBox5_LostFocus"/>
-        <TextBox x:Name="textBox6" HorizontalAlignment="Left" Height="23" Margin="32,30,0,0" TextWrapping="Wrap" Text="Cédula" VerticalAlignment="Top" Width="164" GotFocus="TextBox6_GotFocus" LostFocus="TextBox6_LostFocus"/>
+        Title="Usuarios" Height="512" Width="699">
+    <Grid Margin="0,0,2,27">
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="34,88,0,0" TextWrapping="Wrap" Text="Nombre" VerticalAlignment="Top" Width="164" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="34,116,0,0" TextWrapping="Wrap" Text="Apellido" VerticalAlignment="Top" Width="164" GotFocus="TextBox1_GotFocus" LostFocus="TextBox1_LostFocus"/>
+        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" Margin="34,144,0,0" TextWrapping="Wrap" Text="Dirección" VerticalAlignment="Top" Width="164" GotFocus="TextBox3_GotFocus" LostFocus="TextBox3_LostFocus" TextChanged="TextBox3_TextChanged"/>
+        <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="23" Margin="34,172,0,0" TextWrapping="Wrap" Text="Teléfono" VerticalAlignment="Top" Width="164" GotFocus="TextBox4_GotFocus" LostFocus="TextBox4_LostFocus"/>
+        <TextBox x:Name="textBox5" HorizontalAlignment="Left" Height="23" Margin="34,200,0,0" TextWrapping="Wrap" Text="E-mail" VerticalAlignment="Top" Width="164" GotFocus="TextBox5_GotFocus" LostFocus="TextBox5_LostFocus"/>
+        <TextBox x:Name="textBox6" HorizontalAlignment="Left" Height="23" Margin="34,60,0,0" TextWrapping="Wrap" Text="Cédula" VerticalAlignment="Top" Width="164" GotFocus="TextBox6_GotFocus" LostFocus="TextBox6_LostFocus"/>
 
-        <Button x:Name="button1" Content="Agregar foto" HorizontalAlignment="Left" Margin="236,270,0,0" VerticalAlignment="Top" Width="164"/>
-
-        <Border Name="brdSiteLogo" 
-          BorderThickness="2"
-          BorderBrush="#FF000000"
-          VerticalAlignment="Top"
-          HorizontalAlignment="Left"
-          Margin="238,30,0,0"
-          Height="215" 
-          Width="162">
-
-            <Image Name="imgSiteLogo"             
-         HorizontalAlignment="Stretch" 
-         VerticalAlignment="Stretch" 
-         Stretch="Fill" Margin="-2,0,-1,-3" RenderTransformOrigin="0.5,0.5">
-                <Image.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform AngleY="0.365"/>
-                        <RotateTransform/>
-                        <TranslateTransform Y="0.494"/>
-                    </TransformGroup>
-                </Image.RenderTransform>
-            </Image>
-
-        </Border>
-        <Button x:Name="button" Content="Guardar" HorizontalAlignment="Left" Margin="32,271,0,0" VerticalAlignment="Top" Width="164" Click="Button_Click"/>
+        <Button x:Name="button1" Content="Agregar foto" HorizontalAlignment="Left" Margin="237,205,0,0" VerticalAlignment="Top" Width="164"/>
+        <Button x:Name="button" Content="Guardar" HorizontalAlignment="Left" Margin="237,57,0,0" VerticalAlignment="Top" Width="164" Click="Button_Click"/>
+        <Button x:Name="button2" Content="Consultar" HorizontalAlignment="Left" Margin="237,131,0,0" VerticalAlignment="Top" Width="164" Click="Button2_Click"/>
+        <Button x:Name="button3" Content="Modificar" HorizontalAlignment="Left" Margin="237,94,0,0" VerticalAlignment="Top" Width="164" Click="Button3_Click"/>
+        <Button x:Name="button4" Content="Agregar huella" HorizontalAlignment="Left" Margin="237,168,0,0" VerticalAlignment="Top" Width="164" Click="Button4_Click"/>
     </Grid>
 </Window>
