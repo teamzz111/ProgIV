@@ -76,6 +76,9 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="WebCam_Capture">
+      <HintPath>..\..\..\..\..\Desktop\WPFCSharpWebCam\WebCam_Capture.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -86,7 +89,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Foto.xaml.cs">
+      <DependentUpon>Foto.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Funciones.cs" />
+    <Compile Include="Helper.cs" />
     <Compile Include="Usuarios.xaml.cs">
       <DependentUpon>Usuarios.xaml</DependentUpon>
     </Compile>
@@ -96,6 +103,11 @@
     <Compile Include="LoginAdmin.xaml.cs">
       <DependentUpon>LoginAdmin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WebCam.cs" />
+    <Page Include="Foto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

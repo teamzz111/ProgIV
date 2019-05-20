@@ -233,5 +233,11 @@ namespace Dashboard1
                 MessageBox.Show(exc.Message, "Información");
             }
         }
+
+        private void Button1_Click(object sender, RoutedEventArgs e)
+        {
+            Foto f = new Foto();
+            f.Show();
+        }
     }
 }

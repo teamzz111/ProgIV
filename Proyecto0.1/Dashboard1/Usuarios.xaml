@@ -14,7 +14,7 @@
         <TextBox x:Name="textBox5" HorizontalAlignment="Left" Height="23" Margin="34,200,0,0" TextWrapping="Wrap" Text="E-mail" VerticalAlignment="Top" Width="164" GotFocus="TextBox5_GotFocus" LostFocus="TextBox5_LostFocus"/>
         <TextBox x:Name="textBox6" HorizontalAlignment="Left" Height="23" Margin="34,60,0,0" TextWrapping="Wrap" Text="Cédula" VerticalAlignment="Top" Width="164" GotFocus="TextBox6_GotFocus" LostFocus="TextBox6_LostFocus"/>
 
-        <Button x:Name="button1" Content="Agregar foto" HorizontalAlignment="Left" Margin="237,205,0,0" VerticalAlignment="Top" Width="164"/>
+        <Button x:Name="button1" Content="Agregar foto" HorizontalAlignment="Left" Margin="237,205,0,0" VerticalAlignment="Top" Width="164" Click="Button1_Click"/>
         <Button x:Name="button" Content="Guardar" HorizontalAlignment="Left" Margin="237,57,0,0" VerticalAlignment="Top" Width="164" Click="Button_Click"/>
         <Button x:Name="button2" Content="Consultar" HorizontalAlignment="Left" Margin="237,131,0,0" VerticalAlignment="Top" Width="164" Click="Button2_Click"/>
         <Button x:Name="button3" Content="Modificar" HorizontalAlignment="Left" Margin="237,94,0,0" VerticalAlignment="Top" Width="164" Click="Button3_Click"/>

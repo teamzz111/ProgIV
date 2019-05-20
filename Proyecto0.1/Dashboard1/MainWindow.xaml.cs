@@ -56,7 +56,7 @@ namespace Dashboard1
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
+            Usuarios u = new Usuarios();
         }
     }
 
