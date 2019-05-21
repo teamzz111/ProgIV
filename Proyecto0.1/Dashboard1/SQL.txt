@@ -1,29 +1,3 @@
-CREATE TABLE [dbo].[Empleado](
-[Id] [int] NOT NULL,
-[nombre] [varchar](50) NOT NULL,
-[apellido] [varchar](50) NOT NULL,
-[direccion] [varchar](50) NULL,
-[telefono] [int] NULL,
-[email] [varchar](50) NULL,
-[estado] [varchar](10) NOT NULL,
-[tipo] [varchar](10) NOT NULL,
-CONSTRAINT [PK_Empleado] PRIMARY KEY CLUSTERED
-(
-[Id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF,
-ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-
-
-
-CREATE PROCEDURE [dbo].[IngresoSalida] (
-@Id int,
-@estado varchar(10)
-)
-AS
-BEGIN
-UPDATE dbo.Empleado SET estado=@estado WHERE Id=@Id
-END
 
 
 *********************
@@ -31,18 +5,68 @@ tbFecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
 tbHora.Text = DateTime.Now.ToString("hh:mm:ss");
 *********************
 
-CREATE TABLE [dbo].[Registros](
-[Id] [int] NOT NULL AUTO_INCREMENT,
-[nombre] [varchar](50) NOT NULL,
-[apellido] [varchar](50) NOT NULL,
-[direccion] [varchar](50) NULL,
-[telefono] [int] NULL,
-[email] [varchar](50) NULL,
-[estado] [varchar](10) NOT NULL,
-[tipo] [varchar](10) NOT NULL,
-CONSTRAINT [PK_Empleado] PRIMARY KEY CLUSTERED
-(
-[Id] ASC
-)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF,
-ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+CREATE PROCEDURE [dbo].[insertarEmpleado] (
+@Id int,
+@nombre varchar(50),
+@apellido varchar(50),
+@direccion varchar(50),
+@telefono int,
+@email varchar(50),
+@tipo
+@msj varchar(60)output
+)
+AS
+BEGIN
+insert into dbo.Empleado values(@Id,@nombre,@apellido,@direccion,@telefono,@email,'fuera',@tipo)
+set @msj='Registro grabado correctamente'
+END
+
+
+CREATE PROCEDURE [dbo].[ConsultarEmpleado] (
+@Id int
+)
+AS
+BEGIN
+SELECT * FROM dbo.Empleado WHERE Id=@Id
+END
+
+
+CREATE PROCEDURE [dbo].[ModificarEmpleado] (
+@Id int,
+@nombre varchar(50),
+@apellido varchar(50),
+@direccion varchar(50),
+@telefono int,
+@email varchar(50),
+@msj varchar(60)output
+)
+AS
+BEGIN
+UPDATE dbo.Empleado SET nombre=@nombre, apellido=@apellido, direccion=@direccion, telefono=@telefono, email=@email WHERE Id=@Id
+set @msj='Empleado modificado correctamente'
+END
+
+
+
+CREATE PROCEDURE [dbo].[InsertarHuella] (
+@Id int,
+@Huella varbinary(max),
+@msj varchar(60)output
+)
+AS
+BEGIN
+insert into dbo.Huella values(@Huella, @Id)
+set @msj='Huella grabada correctamente'
+END
+
+
+CREATE PROCEDURE [dbo].[InsertarFoto] (
+@Id int,
+@Foto varbinary(max),
+@msj varchar(60)output
+)
+AS
+BEGIN
+insert into dbo.Foto values(@Foto, @Id)
+set @msj='Huella grabada correctamente'
+END
