@@ -10,16 +10,21 @@ CREATE PROCEDURE [dbo].[insertarEmpleado] (
 )
 AS
 BEGIN
-insert into dbo.Empleado values(@Id,@nombre,@apellido,@direccion,@telefono,@email)
+insert into dbo.Empleado values(@Id,@nombre,@apellido,@direccion,@telefono,@email,'fuera')
 set @msj='Registro grabado correctamente'
-END
+END
+
+
 CREATE PROCEDURE [dbo].[ConsultarEmpleado] (
 @Id int
 )
 AS
 BEGIN
 SELECT * FROM dbo.Empleado WHERE Id=@Id
-ENDCREATE PROCEDURE [dbo].[ModificarEmpleado] (
+END
+
+
+CREATE PROCEDURE [dbo].[ModificarEmpleado] (
 @Id int,
 @nombre varchar(50),
 @apellido varchar(50),
@@ -32,7 +37,10 @@ AS
 BEGIN
 UPDATE dbo.Empleado SET nombre=@nombre, apellido=@apellido, direccion=@direccion, telefono=@telefono, email=@email WHERE Id=@Id
 set @msj='Empleado modificado correctamente'
-END
+END
+
+
+
 CREATE PROCEDURE [dbo].[InsertarHuella] (
 @Id int,
 @Huella varbinary(max),
