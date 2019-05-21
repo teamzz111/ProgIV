@@ -6,7 +6,7 @@ CREATE TABLE [dbo].[Empleado](
 [telefono] [int] NULL,
 [email] [varchar](50) NULL,
 [estado] [varchar](10) NOT NULL,
-
+[tipo] [varchar](10) NOT NULL,
 CONSTRAINT [PK_Empleado] PRIMARY KEY CLUSTERED
 (
 [Id] ASC
@@ -16,28 +16,33 @@ ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 
 
 
-CREATE TABLE [dbo].[Visitante](
-[Id] [int] NOT NULL,
+CREATE PROCEDURE [dbo].[IngresoSalida] (
+@Id int,
+@estado varchar(10)
+)
+AS
+BEGIN
+UPDATE dbo.Empleado SET estado=@estado WHERE Id=@Id
+END
+
+
+*********************
+tbFecha.Text = DateTime.Now.ToString("dd/MM/yyyy"); 
+tbHora.Text = DateTime.Now.ToString("hh:mm:ss");
+*********************
+
+CREATE TABLE [dbo].[Registros](
+[Id] [int] NOT NULL AUTO_INCREMENT,
 [nombre] [varchar](50) NOT NULL,
 [apellido] [varchar](50) NOT NULL,
+[direccion] [varchar](50) NULL,
+[telefono] [int] NULL,
+[email] [varchar](50) NULL,
 [estado] [varchar](10) NOT NULL,
-[id_empleado] [int] NOT NULL,
-CONSTRAINT [PK_Visitante] PRIMARY KEY CLUSTERED
+[tipo] [varchar](10) NOT NULL,
+CONSTRAINT [PK_Empleado] PRIMARY KEY CLUSTERED
 (
 [Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF,
 ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
-
-
-CREATE PROCEDURE [dbo].[insertarVisitante] (
-@Id int,
-@nombre varchar(50),
-@apellido varchar(50),
-@msj varchar(60)output
-)
-AS
-BEGIN
-insert into dbo.Visitante values(@Id,@nombre,@apellido,'fuera')
-set @msj='Registro grabado correctamente'
-END
