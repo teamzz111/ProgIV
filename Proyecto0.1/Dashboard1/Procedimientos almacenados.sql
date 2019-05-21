@@ -6,11 +6,12 @@ CREATE PROCEDURE [dbo].[insertarEmpleado] (
 @direccion varchar(50),
 @telefono int,
 @email varchar(50),
+@tipo
 @msj varchar(60)output
 )
 AS
 BEGIN
-insert into dbo.Empleado values(@Id,@nombre,@apellido,@direccion,@telefono,@email,'fuera')
+insert into dbo.Empleado values(@Id,@nombre,@apellido,@direccion,@telefono,@email,'fuera',@tipo)
 set @msj='Registro grabado correctamente'
 END
 
