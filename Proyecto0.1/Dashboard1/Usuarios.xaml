@@ -19,5 +19,7 @@
         <Button x:Name="button2" Content="Consultar" HorizontalAlignment="Left" Margin="237,131,0,0" VerticalAlignment="Top" Width="164" Click="Button2_Click"/>
         <Button x:Name="button3" Content="Modificar" HorizontalAlignment="Left" Margin="237,94,0,0" VerticalAlignment="Top" Width="164" Click="Button3_Click"/>
         <Button x:Name="button4" Content="Agregar huella" HorizontalAlignment="Left" Margin="237,168,0,0" VerticalAlignment="Top" Width="164" Click="Button4_Click"/>
+        <RadioButton x:Name="radioButton" Content="Empleado" HorizontalAlignment="Left" Margin="34,247,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="radioButton1" Content="Visitante" HorizontalAlignment="Left" Margin="133,247,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.306,-0.269"/>
     </Grid>
 </Window>

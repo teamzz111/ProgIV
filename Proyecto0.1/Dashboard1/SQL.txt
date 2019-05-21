@@ -1,0 +1,43 @@
+CREATE TABLE [dbo].[Empleado](
+[Id] [int] NOT NULL,
+[nombre] [varchar](50) NOT NULL,
+[apellido] [varchar](50) NOT NULL,
+[direccion] [varchar](50) NULL,
+[telefono] [int] NULL,
+[email] [varchar](50) NULL,
+[estado] [varchar](10) NOT NULL,
+
+CONSTRAINT [PK_Empleado] PRIMARY KEY CLUSTERED
+(
+[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF,
+ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+
+
+CREATE TABLE [dbo].[Visitante](
+[Id] [int] NOT NULL,
+[nombre] [varchar](50) NOT NULL,
+[apellido] [varchar](50) NOT NULL,
+[estado] [varchar](10) NOT NULL,
+[id_empleado] [int] NOT NULL,
+CONSTRAINT [PK_Visitante] PRIMARY KEY CLUSTERED
+(
+[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF,
+ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+
+CREATE PROCEDURE [dbo].[insertarVisitante] (
+@Id int,
+@nombre varchar(50),
+@apellido varchar(50),
+@msj varchar(60)output
+)
+AS
+BEGIN
+insert into dbo.Visitante values(@Id,@nombre,@apellido,'fuera')
+set @msj='Registro grabado correctamente'
+END
