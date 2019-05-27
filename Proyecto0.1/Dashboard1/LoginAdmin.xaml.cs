@@ -40,8 +40,8 @@ Initial Catalog=dbo; Integrated Security=True;");
                 sqlCmd.Parameters.AddWithValue("@Username", user.Text);
                 sqlCmd.Parameters.AddWithValue("@Password", pass.Password);
                 int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
-                MessageBox.Show(count.ToString());
-                if (count == 1)
+          
+                if (count > 0)
                 {
                     MainWindow dashboard = new MainWindow();
                     dashboard.Show();
