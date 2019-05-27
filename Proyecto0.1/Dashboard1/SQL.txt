@@ -1,4 +1,10 @@
 
+
+*********************
+tbFecha.Text = DateTime.Now.ToString("dd/MM/yyyy"); 
+tbHora.Text = DateTime.Now.ToString("hh:mm:ss");
+*********************
+
 CREATE PROCEDURE [dbo].[insertarEmpleado] (
 @Id int,
 @nombre varchar(50),

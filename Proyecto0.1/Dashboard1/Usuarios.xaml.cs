@@ -119,6 +119,7 @@ namespace Dashboard1
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            
             try
             {
                 SqlCommand comandodb;
@@ -132,9 +133,11 @@ namespace Dashboard1
                 comandodb.Parameters.AddWithValue("@direccion", textBox3.Text);
                 comandodb.Parameters.AddWithValue("@telefono", textBox4.Text);
                 comandodb.Parameters.AddWithValue("@email", textBox5.Text);
-                comandodb.Parameters.Add("@msj", SqlDbType.VarChar, 60).Direction
-               =
-                ParameterDirection.Output;
+                if (radioButton1.IsChecked == true)
+                    comandodb.Parameters.AddWithValue("@tipo", "Visitante");
+                else
+                    comandodb.Parameters.AddWithValue("@tipo", "Empleado");
+                comandodb.Parameters.Add("@msj", SqlDbType.VarChar, 60).Direction=ParameterDirection.Output;
                 comandodb.ExecuteNonQuery();
                 MessageBox.Show(comandodb.Parameters["@msj"].Value + "");
                 if (f.conexion.State == ConnectionState.Open)
