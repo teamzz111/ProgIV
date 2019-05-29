@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Dashboard1"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
         xmlns:MetroChart="clr-namespace:De.TorstenMandelkow.MetroChart;assembly=De.TorstenMandelkow.MetroChart"
-        mc:Ignorable="d" Height="600" Width="1024" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+        mc:Ignorable="d" Height="584.667" Width="1024" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
 
     <Window.Resources>
         <ResourceDictionary>
@@ -109,7 +109,7 @@
                 <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" RenderingBias="Quality" ShadowDepth="1"/>
             </Grid.Effect>
 
-            <StackPanel x:Name="panel" Background="Black" Margin="-1,30,1,4" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
+            <StackPanel x:Name="panel" Background="Black" Margin="-1,30,1,-46" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2">
                 <StackPanel.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -127,20 +127,26 @@
                 <Button Margin="0,10,0,0" Background="{x:Null}" BorderBrush="{x:Null}" Click="Button_Click_1">
                     <Grid Width="150">
                         <materialDesign:PackIcon Kind="Account" VerticalAlignment="Center" Foreground="White"/>
-                        <TextBlock HorizontalAlignment="Center" Text="USUARIOS" FontFamily="Champagne &amp; Limousines" Margin="42,0,-48,-1" Width="156" Foreground="White"/>
+                        <TextBlock HorizontalAlignment="Right" FontFamily="Champagne &amp; Limousines" Margin="0,0,-48,-1" Width="156" Foreground="White"><Run Text="C. "/><Run Text="USUARIOS"/></TextBlock>
                     </Grid>
                 </Button>
-                <Button Margin="0,10,0,0" Background="{x:Null}" BorderBrush="{x:Null}">
+                <Button Margin="0,10,0,0" Background="{x:Null}" BorderBrush="{x:Null}" Click="Button_Click_4">
                     <Grid Width="150">
-                        <materialDesign:PackIcon Kind="ContentPaste" VerticalAlignment="Bottom" Foreground="White" Margin="0,0,0,1"/>
-                        <TextBlock HorizontalAlignment="Left" Text="REPORTES" FontFamily="Champagne &amp; Limousines" Foreground="White" Margin="42,0,0,0"/>
+                        <materialDesign:PackIcon Kind="Account" VerticalAlignment="Center" Foreground="White"/>
+                        <TextBlock HorizontalAlignment="Right" FontFamily="Champagne &amp; Limousines" Margin="0,0,-48,-1" Width="156" Foreground="White"><Run Text="C. "/><Run Text="VISITANTES"/></TextBlock>
+                    </Grid>
+                </Button>
+                <Button Margin="0,10,0,0" Background="{x:Null}" BorderBrush="{x:Null}" Click="Button_Click_2">
+                    <Grid Width="150">
+                        <materialDesign:PackIcon Kind="HumanHandsup" VerticalAlignment="Bottom" Foreground="White" Margin="0,0,0,1"/>
+                        <TextBlock HorizontalAlignment="Left" Text="MODO VISITA" FontFamily="Champagne &amp; Limousines" Foreground="White" Margin="42,0,-22,0" Width="130"/>
                     </Grid>
                 </Button>
 
                 <Button Margin="0,10" Background="{x:Null}" Foreground="White" BorderBrush="{x:Null}">
                     <Grid Width="150">
-                        <materialDesign:PackIcon Kind="HumanHandsup" VerticalAlignment="Center" Foreground="White"/>
-                        <TextBlock HorizontalAlignment="Center" Text="REGISTRAR HUELLAS" FontFamily="Champagne &amp; Limousines" Margin="21,0,-6,0" Foreground="White"/>
+                        <materialDesign:PackIcon Kind="ContentPaste" VerticalAlignment="Center" Foreground="White"/>
+                        <TextBlock HorizontalAlignment="Center" Text="REPORTES" FontFamily="Champagne &amp; Limousines" Margin="42,0,28,0" Foreground="White" Width="80"/>
                     </Grid>
                 </Button>
             </StackPanel>
@@ -170,24 +176,24 @@
         <Grid Grid.Column="1" HorizontalAlignment="Center" Height="100" Margin="185,23,586,0" Grid.Row="1" VerticalAlignment="Top" Width="53" Background="#FF00AEFF" Grid.ColumnSpan="2">
             <materialDesign:PackIcon Kind="Human" VerticalAlignment="Center" Foreground="White" Margin="14,37,0,33" Height="30" Width="24"/>
         </Grid>
-        <Label x:Name="label" Content="Empleados registrados&#xD;&#xA;" Grid.Column="1" HorizontalAlignment="Left" Margin="30,62,0,0" Grid.Row="1" VerticalAlignment="Top" Height="27" Foreground="#DDFFFFFF"/>
+        <Label x:Name="label" Content="Empleados registrados&#xD;&#xA;" Grid.Column="1" HorizontalAlignment="Left" Margin="35,71,0,0" Grid.Row="1" VerticalAlignment="Top" Height="27" Foreground="#DDFFFFFF"/>
         <Grid Grid.Column="2" HorizontalAlignment="Left" Height="100" Margin="66,23,0,0" Grid.Row="1" VerticalAlignment="Top" Width="163" Background="Red">
             <Label x:Name="label2" Content="10" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="22"/>
         </Grid>
         <Grid Grid.Column="2" HorizontalAlignment="Center" Height="100" Margin="229,23,321,0" Grid.Row="1" VerticalAlignment="Top" Width="53" Background="#FFD80303">
             <materialDesign:PackIcon Kind="Human" VerticalAlignment="Center" Foreground="White" Margin="14,37,0,33" Height="30" Width="24"/>
         </Grid>
-        <Label x:Name="label_Copy" Content="Empleados con &#xD;&#xA;retardos&#xA;" Grid.Column="2" HorizontalAlignment="Left" Margin="76,62,0,0" Grid.Row="1" VerticalAlignment="Top" Height="47" Foreground="#DDFFFFFF" Width="130"/>
-        <StackPanel x:Name="Title" HorizontalAlignment="Center" Height="30" VerticalAlignment="Top" Width="200" Background="#FF383737">
-            <Label Content="HuAdmin v1.0" Foreground="#DDFFFFFF"/>
-        </StackPanel>
+        <Label x:Name="label_Copy" Content="Visitantes registrados" Grid.Column="2" HorizontalAlignment="Left" Margin="76,71,0,0" Grid.Row="1" VerticalAlignment="Top" Height="47" Foreground="#DDFFFFFF" Width="130"/>
+        <Canvas x:Name="Title" HorizontalAlignment="Center" Height="30" VerticalAlignment="Top" Width="200" Background="#FF383737">
+            <Label Content="HuAdmin - Control de Acceso" Foreground="#DDFFFFFF" FontWeight="Bold" FontFamily="Segoe UI Light" Canvas.Left="18"/>
+        </Canvas>
         <Grid Grid.Column="2" HorizontalAlignment="Left" Height="100" Margin="338,23,0,0" Grid.Row="1" VerticalAlignment="Top" Width="160" Background="#FFFFB900">
-            <Label x:Name="label3" Content="23&#xD;&#xA;" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="22"/>
+            <Label x:Name="label3" Content="0" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="22"/>
         </Grid>
         <Grid Grid.Column="2" HorizontalAlignment="Center" Height="100" Margin="498,23,52,0" Grid.Row="1" VerticalAlignment="Top" Width="53" Background="#FFCD9500">
             <materialDesign:PackIcon Kind="Human" VerticalAlignment="Center" Foreground="White" Margin="14,37,0,33" Height="30" Width="24"/>
         </Grid>
-        <Label x:Name="label_Copy1" Content="Visitantes&#xA;" Grid.Column="2" HorizontalAlignment="Left" Margin="368,62,0,0" Grid.Row="1" VerticalAlignment="Top" Height="47" Foreground="#DDFFFFFF" Width="130"/>
+        <Label x:Name="label_Copy1" Content="Visitas realizadas&#xA;" Grid.Column="2" HorizontalAlignment="Left" Margin="347,71,0,0" Grid.Row="1" VerticalAlignment="Top" Height="47" Foreground="#DDFFFFFF" Width="130"/>
         <DataGrid x:Name="dataGrid" Grid.Column="1" HorizontalAlignment="Left" Height="361" Margin="25,172,0,0" Grid.Row="1" VerticalAlignment="Top" Width="747" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="1"/>
     </Grid>
 </Window>

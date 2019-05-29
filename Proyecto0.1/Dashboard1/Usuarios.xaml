@@ -4,9 +4,30 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Dashboard1"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
         mc:Ignorable="d"
-        Title="Usuarios" Height="450" Width="800">
-    <Grid>
-        
+        Title="Usuarios" Height="641" Width="776" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" >
+    <Grid Margin="0,0,2,27">
+
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="37" Margin="87,214,0,0" TextWrapping="Wrap" Text="Nombre" VerticalAlignment="Top" Width="344" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="38" Margin="87,259,0,0" TextWrapping="Wrap" Text="Apellido" VerticalAlignment="Top" Width="344" GotFocus="TextBox1_GotFocus" LostFocus="TextBox1_LostFocus"/>
+        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="38" Margin="87,305,0,0" TextWrapping="Wrap" Text="Dirección" VerticalAlignment="Top" Width="344" GotFocus="TextBox3_GotFocus" LostFocus="TextBox3_LostFocus" TextChanged="TextBox3_TextChanged"/>
+        <TextBox x:Name="textBox4" HorizontalAlignment="Left" Height="37" Margin="87,351,0,0" TextWrapping="Wrap" Text="Teléfono" VerticalAlignment="Top" Width="344" GotFocus="TextBox4_GotFocus" LostFocus="TextBox4_LostFocus"/>
+        <TextBox x:Name="textBox5" HorizontalAlignment="Left" Height="38" Margin="87,396,0,0" TextWrapping="Wrap" Text="E-mail" VerticalAlignment="Top" Width="344" GotFocus="TextBox5_GotFocus" LostFocus="TextBox5_LostFocus"/>
+        <TextBox x:Name="textBox6" HorizontalAlignment="Left" Height="38" Margin="87,168,0,0" TextWrapping="Wrap" Text="Cédula" VerticalAlignment="Top" Width="344" GotFocus="TextBox6_GotFocus" LostFocus="TextBox6_LostFocus"/>
+
+        <Button x:Name="button1" Content="Agregar foto" HorizontalAlignment="Left" Margin="484,362,0,0" VerticalAlignment="Top" Width="220" Click="Button1_Click" Height="37"/>
+        <Button x:Name="button" Content="Guardar" HorizontalAlignment="Left" Margin="484,193,0,0" VerticalAlignment="Top" Width="220" Click="Button_Click" Height="37"/>
+        <Button x:Name="button2" Content="Consultar" HorizontalAlignment="Left" Margin="484,278,0,0" VerticalAlignment="Top" Width="220" Click="Button2_Click" Height="36"/>
+        <Button x:Name="button3" Content="Modificar" HorizontalAlignment="Left" Margin="484,235,0,0" VerticalAlignment="Top" Width="220" Click="Button3_Click" Height="37"/>
+        <Button x:Name="button4" Content="Limpiar formulario" HorizontalAlignment="Left" Margin="484,404,0,0" VerticalAlignment="Top" Width="220" Height="37" Click="Button4_Click_1"/>
+        <Button x:Name="button6" Content="Agregar huella" HorizontalAlignment="Left" Margin="484,319,0,0" VerticalAlignment="Top" Width="220" Click="Button4_Click" Height="37"/>
+        <Button x:Name="button5"  HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="56" Height="24" Click="Button5_Click">
+            <materialDesign:PackIcon Kind="ArrowLeft" VerticalAlignment="Center" Foreground="White" Height="31" Width="25"/>
+        </Button>
+        <Label x:Name="label" Content="Usuarios" HorizontalAlignment="Left" Margin="307,50,0,0" VerticalAlignment="Top" FontSize="48"/>
+        <Label x:Name="label1" Content="Registra, actualiza y añade nuevas cosas a un usuario." HorizontalAlignment="Left" Margin="256,124,0,0" VerticalAlignment="Top"/>
+        <Image Source="{Binding ModelImageUri}" x:Name="imgBitmap" Margin="156,472,395,31" />
+        <Image x:Name="image" HorizontalAlignment="Left" Height="111" Margin="484,472,0,0" VerticalAlignment="Top" Width="117" Source="Resources/fixed.png"/>
     </Grid>
 </Window>

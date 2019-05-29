@@ -1,0 +1,66 @@
+
+CREATE PROCEDURE [dbo].[insertarEmpleado] (
+@Id int,
+@nombre varchar(50),
+@apellido varchar(50),
+@direccion varchar(50),
+@telefono int,
+@email varchar(50),
+@tipo
+@msj varchar(60)output
+)
+AS
+BEGIN
+insert into dbo.Empleado values(@Id,@nombre,@apellido,@direccion,@telefono,@email,'fuera',@tipo)
+set @msj='Registro grabado correctamente'
+END
+
+
+CREATE PROCEDURE [dbo].[ConsultarEmpleado] (
+@Id int
+)
+AS
+BEGIN
+SELECT * FROM dbo.Empleado WHERE Id=@Id
+END
+
+
+CREATE PROCEDURE [dbo].[ModificarEmpleado] (
+@Id int,
+@nombre varchar(50),
+@apellido varchar(50),
+@direccion varchar(50),
+@telefono int,
+@email varchar(50),
+@msj varchar(60)output
+)
+AS
+BEGIN
+UPDATE dbo.Empleado SET nombre=@nombre, apellido=@apellido, direccion=@direccion, telefono=@telefono, email=@email WHERE Id=@Id
+set @msj='Empleado modificado correctamente'
+END
+
+
+
+CREATE PROCEDURE [dbo].[InsertarHuella] (
+@Id int,
+@Huella varbinary(max),
+@msj varchar(60)output
+)
+AS
+BEGIN
+insert into dbo.Huella values(@Huella, @Id)
+set @msj='Huella grabada correctamente'
+END
+
+
+CREATE PROCEDURE [dbo].[InsertarFoto] (
+@Id int,
+@Foto varbinary(max),
+@msj varchar(60)output
+)
+AS
+BEGIN
+insert into dbo.Foto values(@Foto, @Id)
+set @msj='Huella grabada correctamente'
+END

@@ -25,8 +25,8 @@ namespace Dashboard1
         {
             InitializeComponent();
         }
-        SqlConnection sqlCon = new SqlConnection(@"Data Source=localhost\SQLEXPRESS;
-        Initial Catalog=ElectivaIV; Integrated Security=True;");
+        SqlConnection sqlCon = new SqlConnection(@"Data Source=localhost;
+        Initial Catalog=dbo; Integrated Security=True;");
         private void button_Click(object sender, RoutedEventArgs e)
         {
 
@@ -34,13 +34,14 @@ namespace Dashboard1
             {
                 if (sqlCon.State == ConnectionState.Closed)
                     sqlCon.Open();
-                String consulta = "SELECT COUNT(1) FROM tbusuarios WHERE Login=@Username AND Password = @Password";
+                String consulta = "SELECT COUNT(1) FROM auth WHERE usuario=@Username AND contra = @Password";
                  SqlCommand sqlCmd = new SqlCommand(consulta, sqlCon);
                 sqlCmd.CommandType = CommandType.Text;
                 sqlCmd.Parameters.AddWithValue("@Username", user.Text);
                 sqlCmd.Parameters.AddWithValue("@Password", pass.Password);
                 int count = Convert.ToInt32(sqlCmd.ExecuteScalar());
-                if (count == 1)
+          
+                if (count > 0)
                 {
                     MainWindow dashboard = new MainWindow();
                     dashboard.Show();

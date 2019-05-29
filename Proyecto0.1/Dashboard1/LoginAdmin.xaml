@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Dashboard1"
         mc:Ignorable="d"
-        Title="ADMIN ACCESS" Height="450" Width="800">
-    <Grid Background="#FF00A2FF" Margin="0,0,0,-101">
+        Title="ADMIN ACCESS" Height="550" Width="800">
+    <Grid Background="#FF00A2FF" Margin="0,0,0,-54" RenderTransformOrigin="0.505,0.659">
         <StackPanel HorizontalAlignment="Left" Height="393" Margin="208,42,0,0" VerticalAlignment="Top" Width="382" Background="White">
             <Image x:Name="image" Source="Resources/user.png" Height="133" VerticalAlignment="Top" Width="163" Margin="109,20,109,0"/>
 
