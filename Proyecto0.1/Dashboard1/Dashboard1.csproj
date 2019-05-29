@@ -79,6 +79,9 @@
     <Reference Include="WebCam_Capture">
       <HintPath>..\..\..\..\..\Desktop\WPFCSharpWebCam\WebCam_Capture.dll</HintPath>
     </Reference>
+    <Reference Include="WebEye.Controls.Wpf.WebCameraControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebEye.Controls.Wpf.WebCameraControl.1.0.3\lib\net40\WebEye.Controls.Wpf.WebCameraControl.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -96,6 +99,9 @@
     <Compile Include="Helper.cs" />
     <Compile Include="Ingreso.xaml.cs">
       <DependentUpon>Ingreso.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Visitantes.xaml.cs">
+      <DependentUpon>Visitantes.xaml</DependentUpon>
     </Compile>
     <Compile Include="Usuarios.xaml.cs">
       <DependentUpon>Usuarios.xaml</DependentUpon>
@@ -127,6 +133,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Visitantes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Usuarios.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -136,6 +146,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="LoginAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Window1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

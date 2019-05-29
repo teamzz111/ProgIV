@@ -10,10 +10,13 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-
-using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows;
+using System.Windows.Controls;
 
+using Microsoft.Win32;
+
+using WebEye.Controls.Wpf;
 namespace Dashboard1
 {
     /// <summary>
@@ -21,50 +24,60 @@ namespace Dashboard1
     /// </summary>
     public partial class Foto : Window
     {
-        public Foto()
+        String id;
+        public Foto(String id)
         {
+            this.id = id;
             InitializeComponent();
+            InitializeComboBox();
         }
-        WebCam webcam;
-        private void bntStop_Click(object sender, RoutedEventArgs e)
+        private void InitializeComboBox()
         {
-            webcam.Stop();
+            comboBox.ItemsSource = webCameraControl.GetVideoCaptureDevices();
+
+            if (comboBox.Items.Count > 0)
+            {
+                comboBox.SelectedItem = comboBox.Items[0];
+            }
         }
 
-        private void bntStart_Click(object sender, RoutedEventArgs e)
+        private void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            webcam.Start();
+            startButton.IsEnabled = e.AddedItems.Count > 0;
         }
 
-        private void mainWindow_Loaded(object sender, RoutedEventArgs e)
+        private void OnStartButtonClick(object sender, RoutedEventArgs e)
         {
-            webcam = new WebCam();
-            webcam.InitializeWebCam(ref imgVideo);
+            var cameraId = (WebCameraId)comboBox.SelectedItem;
+            webCameraControl.StartCapture(cameraId);
         }
 
-        private void bntContinue_Click(object sender, RoutedEventArgs e)
+        private void OnStopButtonClick(object sender, RoutedEventArgs e)
         {
-            webcam.Continue();
+            webCameraControl.StopCapture();
         }
 
-        private void bntCapture_Click(object sender, RoutedEventArgs e)
+        private void OnImageButtonClick(object sender, RoutedEventArgs e)
         {
-            imgCapture.Source = imgVideo.Source;
-        }
+            /*  var dialog = new SaveFileDialog { Filter = "Bitmap Image|*.bmp" };
+              if (dialog.ShowDialog() == true)
+              {*/
+            // MessageBox.Show(dialog.FileName);
+            try
+            {
+                String cadena = "C:\\Users\\AndresLargo\\Documents\\GitHub\\ProgIV\\Proyecto0.1\\Dashboard1\\users\\" + id + ".bmp";
+                webCameraControl.GetCurrentImage().Save(cadena);
+                MessageBox.Show("Guardado exitoso");
 
-        private void bntSaveImage_Click(object sender, RoutedEventArgs e)
-        {
-            Helper.SaveImageCapture((BitmapSource)imgCapture.Source);
-        }
-
-        private void bntResolution_Click(object sender, RoutedEventArgs e)
-        {
-            webcam.ResolutionSetting();
-        }
-
-        private void bntSetting_Click(object sender, RoutedEventArgs e)
-        {
-            webcam.AdvanceSetting();
+            } catch (Exception)
+            {
+                MessageBox.Show("Operación fallida, intente más tarde");
+            }
+            finally
+            {
+                this.Hide(); 
+            }
+          //  }
         }
     }
 }

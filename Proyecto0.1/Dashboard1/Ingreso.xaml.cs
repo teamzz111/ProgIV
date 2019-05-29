@@ -46,9 +46,9 @@ namespace Dashboard1
                     else
                     { label.Content = "Hasta pronto" + reader.GetString(1); }
                     estado = reader.GetString(6);
-                    tipo = reader.GetString(7);
+                
                 }
-
+                reader.Close();
                 if (f.conexion.State == ConnectionState.Open)
                 {
                     f.conexion.Close();
@@ -69,7 +69,7 @@ namespace Dashboard1
                 SqlCommand comandodb;
                 if (f.conexion.State == ConnectionState.Closed)
                     f.conexion.Open();
-                comandodb = new SqlCommand("ModificarEmpleado", f.conexion);
+                comandodb = new SqlCommand("ModificarEmpleadoEstado", f.conexion);
                 comandodb.CommandType = CommandType.StoredProcedure;
                 comandodb.Parameters.AddWithValue("@Id", textBox.Text);
                 if(estado=="fuera")
@@ -78,7 +78,7 @@ namespace Dashboard1
                     comandodb.Parameters.AddWithValue("@estado", "fuera");
                 else
                     comandodb.Parameters.AddWithValue("@estado", "inactivo");
-
+                comandodb.Parameters.AddWithValue("@msj", "Éxito");
                 comandodb.ExecuteNonQuery();
                 if (f.conexion.State == ConnectionState.Open)
                 {

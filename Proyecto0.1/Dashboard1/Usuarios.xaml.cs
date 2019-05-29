@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Data.SqlClient;
 using System.Windows.Shapes;
 using System.Data;
+using System.IO.Packaging;
 
 namespace Dashboard1
 {
@@ -24,6 +25,8 @@ namespace Dashboard1
         public Usuarios()
         {
             InitializeComponent();
+            var imgPath = "C:\\Users\\AndresLargo\\Documents\\GitHub\\ProgIV\\Proyecto0.1\\Dashboard1\\users\\Default.bmp";
+            imgBitmap.Source = new BitmapImage(new Uri(imgPath));
         }
         Funciones f = new Funciones();
 
@@ -133,10 +136,6 @@ namespace Dashboard1
                 comandodb.Parameters.AddWithValue("@direccion", textBox3.Text);
                 comandodb.Parameters.AddWithValue("@telefono", textBox4.Text);
                 comandodb.Parameters.AddWithValue("@email", textBox5.Text);
-                if (radioButton1.IsChecked == true)
-                    comandodb.Parameters.AddWithValue("@tipo", "Visitante");
-                else
-                    comandodb.Parameters.AddWithValue("@tipo", "Empleado");
                 comandodb.Parameters.Add("@msj", SqlDbType.VarChar, 60).Direction=ParameterDirection.Output;
                 comandodb.ExecuteNonQuery();
                 MessageBox.Show(comandodb.Parameters["@msj"].Value + "");
@@ -152,7 +151,8 @@ namespace Dashboard1
             catch (Exception exc)
             {
                 MessageBox.Show(exc.Message, "Información");
-            }
+            }
+
         }
 
         private void Button3_Click(object sender, RoutedEventArgs e)
@@ -209,7 +209,7 @@ namespace Dashboard1
                 SqlDataReader reader = comandodb.ExecuteReader();
                 while (reader.Read())
                 {
-                    textBox6.Text = "as";
+                    textBox6.IsEnabled = false;
                     textBox.Text = reader.GetString(1);
                     textBox1.Text = reader.GetString(2);
                     textBox3.Text = reader.GetString(3);
@@ -217,7 +217,8 @@ namespace Dashboard1
                     textBox5.Text = reader.GetString(5);
                     reader.Close();
                     comandodb.ExecuteNonQuery();
-                    
+                    break;
+
                 }
 
 
@@ -230,6 +231,15 @@ namespace Dashboard1
                 {
                     MessageBox.Show("Faltan datos", "Información");
                 }
+                try
+                {
+                    var imgPath = "C:\\Users\\AndresLargo\\Documents\\GitHub\\ProgIV\\Proyecto0.1\\Dashboard1\\users\\"+ textBox6.Text + ".bmp";
+                    imgBitmap.Source = new BitmapImage(new Uri(imgPath));
+                }
+                catch (Exception)
+                {
+
+                }
             }
             catch (Exception exc)
             {
@@ -239,8 +249,27 @@ namespace Dashboard1
 
         private void Button1_Click(object sender, RoutedEventArgs e)
         {
-            Foto f = new Foto();
+            Foto f = new Foto(textBox6.Text);
             f.Show();
+        }
+
+        private void Button5_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow t = new MainWindow();
+            t.Show();
+            this.Hide();
+        }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button4_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            Usuarios h = new Usuarios();
+            h.Show();
         }
     }
 }

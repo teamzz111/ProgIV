@@ -26,7 +26,7 @@ namespace Dashboard1
             InitializeComponent();
         }
         SqlConnection sqlCon = new SqlConnection(@"Data Source=localhost;
-Initial Catalog=dbo; Integrated Security=True;");
+        Initial Catalog=dbo; Integrated Security=True;");
         private void button_Click(object sender, RoutedEventArgs e)
         {
 
@@ -34,7 +34,7 @@ Initial Catalog=dbo; Integrated Security=True;");
             {
                 if (sqlCon.State == ConnectionState.Closed)
                     sqlCon.Open();
-                String consulta = "SELECT COUNT(1) FROM Login WHERE User=@Username AND pass = @Password";
+                String consulta = "SELECT COUNT(1) FROM auth WHERE usuario=@Username AND contra = @Password";
                  SqlCommand sqlCmd = new SqlCommand(consulta, sqlCon);
                 sqlCmd.CommandType = CommandType.Text;
                 sqlCmd.Parameters.AddWithValue("@Username", user.Text);

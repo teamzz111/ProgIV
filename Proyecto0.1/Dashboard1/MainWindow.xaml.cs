@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +22,66 @@ namespace Dashboard1
         public MainWindow()
         {
             InitializeComponent();
-
+            setUp();
         }
+        Funciones f = new Funciones();
+        private void setUp()
+        {
+            try
+            {
+                
+                SqlCommand comandodb;
+                if (f.conexion.State == ConnectionState.Closed)
+                    f.conexion.Open();
+                comandodb = new SqlCommand("ConsultarCantidadVisitas", f.conexion);
+                comandodb.CommandType = CommandType.StoredProcedure;
+                SqlDataReader reader = comandodb.ExecuteReader();
+                while (reader.Read())
+                {
+                    label3.Content = reader.GetInt32(0).ToString();
+                    reader.Close();
+                    comandodb.ExecuteNonQuery();
+                    break;
 
+                }
+
+                comandodb = new SqlCommand("ConsultarCantidadUsuarios", f.conexion);
+                comandodb.CommandType = CommandType.StoredProcedure;
+                reader = comandodb.ExecuteReader();
+                while (reader.Read())
+                {
+                    label1.Content = reader.GetInt32(0).ToString();
+                    reader.Close();
+                    comandodb.ExecuteNonQuery();
+                    break;
+
+                }
+                comandodb = new SqlCommand("ConsultarCantidadVisitantes", f.conexion);
+                comandodb.CommandType = CommandType.StoredProcedure;
+                reader = comandodb.ExecuteReader();
+                while (reader.Read())
+                {
+                    label2.Content = reader.GetInt32(0).ToString();
+                    reader.Close();
+                    comandodb.ExecuteNonQuery();
+                    break;
+
+                }
+
+                if (f.conexion.State == ConnectionState.Open)
+                {
+                    f.conexion.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Faltan datos", "Información");
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message, "Información");
+            }
+        }
         private void ButtonFechar_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
@@ -35,17 +94,6 @@ namespace Dashboard1
 
         private void Switch_Click(object sender, RoutedEventArgs e)
         {
-            if(panel.Width != 0)
-            {
-                panel.Width = 0;
-                Title.Width = 0;
-                Menu.Width = 1000;
-            } else
-            {
-                panel.Width = 200;
-                Title.Width = 200;
-                Menu.Width = 824;
-            }
 
         }
 
@@ -57,6 +105,22 @@ namespace Dashboard1
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             Usuarios u = new Usuarios();
+            u.Show();
+            this.Hide();
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            Visistantes u = new Visistantes();
+            u.Show();
+            this.Hide();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Ingreso p = new Ingreso();
+            p.Show();
+            this.Hide();
         }
     }
 

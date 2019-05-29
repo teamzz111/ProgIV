@@ -18,10 +18,10 @@
             <TextBox x:Name="tbInfo" Height="33" TextWrapping="Wrap" Text="O Ingrese documento de identidad" Width="250" Margin="0,20,0,0" GotFocus="User_GotFocus"/>
             <TextBox x:Name="textBox1" Height="25" TextWrapping="Wrap" Text="Ingrese nombre" Margin="66,0"/>
             <Button x:Name="button2" Content="Capturar huella" Width="200" Margin="91,30,91,0"/>
-            <Button x:Name="button1" Content="Guardar" Margin="91,0" Click="Button1_Click"/>
             <WindowsFormsHost>
                 <wf:PictureBox x:Name="pbImage"/>
             </WindowsFormsHost>
+            <Button x:Name="button1" Content="Guardar" Margin="91,0" Click="Button1_Click"/>
         </StackPanel>
         <RadioButton x:Name="radioButton" Content="RadioButton" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
